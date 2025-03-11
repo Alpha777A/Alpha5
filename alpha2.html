@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>อิอุ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Itim', cursive;
+        }
+
+        /* วิดีโอพื้นหลัง */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* จัดเนื้อหาให้อยู่ตรงกลาง */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* เพิ่มเงาตัวอักษรให้ชัดขึ้น */
+        h1, p {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* สไตล์ปุ่ม */
+        .btn {
+            background-color:hsl(196, 51%, 27%);
+            color: white;
+            padding: 15px 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 60px; /* ปรับให้ปุ่มอยู่ด้านล่างข้อความ */
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: hsl(196, 51%, 27%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- วิดีโอพื้นหลัง -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="856148-hd_1920_1080_25fps.mp4" type="video/mp4">
+        วิดีโอไม่รองรับในเบราว์เซอร์ของคุณ
+    </video>
+
+    <div class="container">
+        <h1>โย่ววว <span id="userName"></span></h1>
+        <br>
+        <p>ขอให้วันนี้เป็นวันที่ดีนะจ้ะ </p>
+        <br>
+        <p>มีเพลงไรจะให้ฟังด้วย</p>
+        <br> <br>
+        <a href="https://youtu.be/5SZByn3eik0?si=ogqd0sL0tkPW0OXz" target="_blank" class="btn">นี่ๆ🎧
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('userName').innerText = localStorage.getItem('userName') || "เพื่อนใหม่";
+    </script>
+
+</body>
+</html>

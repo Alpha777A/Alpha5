@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โย่ว</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Itim', cursive;
+        }
+
+        /* ตั้งค่าวิดีโอเป็นพื้นหลัง */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* จัดข้อความให้อยู่ตรงกลางจอ */
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        button {
+            background: #ffffff;
+            color: teal;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- วิดีโอพื้นหลัง -->
+    <video class="video-bg" autoplay muted loop>
+        <source src="71122-537102350_tiny.mp4" type="video/mp4">
+        วิดีโอไม่รองรับในเบราว์เซอร์ของคุณ
+    </video>
+
+    <!-- เนื้อหาตรงกลาง -->
+    <div class="container">
+        <h1>สวัสดี มาทำความรู้จักกันนะ</h1> <br>
+        <p>เราชื่ออัลฟ่า แล้วแกชื่ออะไร?</p> <br>
+        <input type="text" id="nameInput" placeholder="พิมพ์ชื่อของคุณ">
+        <br>
+        <button onclick="goToNextPage()">กดเลย</button>
+    </div>
+
+    <script>
+        function goToNextPage() {
+            const name = document.getElementById('nameInput').value;
+            if (name.trim() !== "") {
+                localStorage.setItem('userName', name);
+                window.location.href = 'alpha2.html';
+            } else {
+                alert("กรุณากรอกชื่อก่อนนะ!");
+            }
+        }
+    </script>
+
+</body>
+</html>
